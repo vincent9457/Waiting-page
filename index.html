@@ -9,27 +9,30 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            overflow: auto;
+        }
+        .container {
+            width: 1000px;
+            margin: 50px auto;
+            position: relative;
         }
         .title {
-            font-size: clamp(24px, 3vw, 48px);  /* 限制字體大小在 24px~48px 之間 */
+            font-size: 48px;
             font-weight: 900;
             color: #333;
-            margin-bottom: 10px;
+            text-align: center;
         }
         .subtitle {
-            font-size: clamp(16px, 1.5vw, 32px);  /* 限制字體大小在 16px~32px 之間 */
+            font-size: 32px;
             font-weight: 600;
             color: #666;
-            margin-bottom: 20px;
+            text-align: center;
         }
         .train-container {
             position: relative;
-            width: min(50vw, 800px);  /* 火車最大寬度 800px，最小根據螢幕縮小 */
+            width: 800px;
+            margin-left: 50px;
+            margin-top: 30px;
         }
         .train-img {
             width: 100%;
@@ -39,23 +42,39 @@
         .fire-img {
             position: absolute;
             top: 15%;
-            left: 5%;
-            width: min(10vw, 100px);  /* 火焰最大寬度 100px，隨螢幕變小 */
+            left: 3%;
+            width: 250px;
             height: auto;
             pointer-events: none;
+        }
+        .driver-img {
+            position: absolute;
+            width: 370px;
+            left: 300px;
+            top: 150px;
+        }
+        .travel-img {
+            position: absolute;
+            width: 370px;
+            left: 500px;
+            top: 150px;
         }
     </style>
 </head>
 <body>
-<div class="title">系統忙碌中</div>
-<div class="subtitle">火車誤點中，請稍後再試！</div>
-<div class="train-container">
-    <img class="train-img" src="imgs/train.png">
-    <img class="fire-img" id="fire" src="imgs/fire1.png">
+<div class="container">
+    <div class="title">系統忙碌中</div>
+    <div class="subtitle">火車誤點中，請稍後再試！</div>
+    <div class="train-container">
+        <img class="train-img" src="imgs/train.png">
+        <img class="fire-img" id="fire" src="imgs/fire1.png">
+        <img class="driver-img" src="imgs/driver1.png">
+        <img class="travel-img" src="imgs/traveler.png">
+    </div>
 </div>
 
 <script>
-    // 火焰圖片列表
+    // 火焰動畫
     const fireImages = [
         "imgs/fire1.png",
         "imgs/fire2.png",
