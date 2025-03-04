@@ -144,10 +144,18 @@
     let fireIndex = 0;
     const fireElement = document.getElementById("fire");
 
-    setInterval(() => {
+    // setInterval(() => {
+    //     fireIndex = (fireIndex + 1) % fireImages.length;
+    //     fireElement.src = fireImages[fireIndex];
+    // }, 100);
+    const changeFire = () => {
         fireIndex = (fireIndex + 1) % fireImages.length;
-        fireElement.src = fireImages[fireIndex];
-    }, 100);
+        fireElement.src = fireImages[fireIndex] + "?t=" + new Date().getTime();
+        console.log("火焰圖片變更:", fireElement.src);
+
+        setTimeout(changeFire, 100);  // 用 setTimeout 代替 setInterval
+    };
+    changeFire(); // 啟動動畫
 </script>
 </body>
 </html>
