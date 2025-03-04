@@ -151,7 +151,7 @@
         console.log("火焰圖片變更:", fireElement.src);
 
         // 🔹 如果是第一次顯示，等待 500ms，之後就變 100ms
-        let delay = firstTimeShown[fireIndex] ? 100 : 500;
+        let delay = firstTimeShown[fireIndex] ? 100 : 1000;
         firstTimeShown[fireIndex] = true; // 標記為已顯示過
 
         setTimeout(changeFire, delay); // 遞迴呼叫，控制不同時間間隔
