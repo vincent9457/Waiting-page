@@ -133,33 +133,6 @@
 </div>
 <script>
     // 火焰動畫
-    const fireImages = [
-        "imgs/fire1.png",
-        "imgs/fire2.png",
-        "imgs/fire3.png",
-        "imgs/fire4.png",
-        "imgs/fire5.png"
-    ];
-
-    let fireIndex = 0;
-    const fireElement = document.getElementById("fire");
-    const firstTimeShown = new Array(fireImages.length).fill(false); // 記錄每張圖片是否已經顯示過
-
-    const changeFire = () => {
-        fireIndex = (fireIndex + 1) % fireImages.length;
-        fireElement.src = fireImages[fireIndex] + "?t=" + new Date().getTime(); // 加時間戳記，避免瀏覽器快取
-        console.log("火焰圖片變更:", fireElement.src);
-
-        // 🔹 如果是第一次顯示，等待 500ms，之後就變 100ms
-        let delay = firstTimeShown[fireIndex] ? 100 : 1000;
-        firstTimeShown[fireIndex] = true; // 標記為已顯示過
-
-        setTimeout(changeFire, delay); // 遞迴呼叫，控制不同時間間隔
-    };
-
-    // 🔥 啟動動畫
-    changeFire();
-
     // const fireImages = [
     //     "imgs/fire1.png",
     //     "imgs/fire2.png",
@@ -170,11 +143,38 @@
     //
     // let fireIndex = 0;
     // const fireElement = document.getElementById("fire");
+    // const firstTimeShown = new Array(fireImages.length).fill(false); // 記錄每張圖片是否已經顯示過
     //
-    // setInterval(() => {
+    // const changeFire = () => {
     //     fireIndex = (fireIndex + 1) % fireImages.length;
-    //     fireElement.src = fireImages[fireIndex];
-    // }, 200);
+    //     fireElement.src = fireImages[fireIndex] + "?t=" + new Date().getTime(); // 加時間戳記，避免瀏覽器快取
+    //     console.log("火焰圖片變更:", fireElement.src);
+    //
+    //     // 🔹 如果是第一次顯示，等待 500ms，之後就變 100ms
+    //     let delay = firstTimeShown[fireIndex] ? 100 : 1000;
+    //     firstTimeShown[fireIndex] = true; // 標記為已顯示過
+    //
+    //     setTimeout(changeFire, delay); // 遞迴呼叫，控制不同時間間隔
+    // };
+    //
+    // // 🔥 啟動動畫
+    // changeFire();
+
+    const fireImages = [
+        "imgs/fire1.png",
+        "imgs/fire2.png",
+        "imgs/fire3.png",
+        "imgs/fire4.png",
+        "imgs/fire5.png"
+    ];
+
+    let fireIndex = 0;
+    const fireElement = document.getElementById("fire");
+
+    setInterval(() => {
+        fireIndex = (fireIndex + 1) % fireImages.length;
+        fireElement.src = fireImages[fireIndex];
+    }, 500);
 
 </script>
 </body>
