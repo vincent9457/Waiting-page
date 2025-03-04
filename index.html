@@ -125,6 +125,11 @@
     <div class="title">系統忙碌中</div>
     <div class="subtitle">火車誤點中，請稍後再試！</div>
     <div class="train-container">
+        <img src="imgs/fire1.png" style="display: none;">
+        <img src="imgs/fire2.png" style="display: none;">
+        <img src="imgs/fire3.png" style="display: none;">
+        <img src="imgs/fire4.png" style="display: none;">
+        <img src="imgs/fire5.png" style="display: none;">
         <img class="train-img" src="imgs/train.png">
         <img class="fire-img" id="fire" src="imgs/fire1.png">
         <img class="driver-img" src="imgs/driver1.png">
@@ -174,7 +179,7 @@
     setInterval(() => {
         fireIndex = (fireIndex + 1) % fireImages.length;
         fireElement.src = fireImages[fireIndex];
-    }, 300);
+    }, 100);
 
 </script>
 </body>
