@@ -133,23 +133,21 @@
 </div>
 <script>
     // 火焰動畫
-    window.onload = function () {
-        const fireImages = [
-            "imgs/fire1.png",
-            "imgs/fire2.png",
-            "imgs/fire3.png",
-            "imgs/fire4.png",
-            "imgs/fire5.png"
-        ];
+    const fireImages = [
+        "imgs/fire1.png",
+        "imgs/fire2.png",
+        "imgs/fire3.png",
+        "imgs/fire4.png",
+        "imgs/fire5.png"
+    ];
 
-        let fireIndex = 0;
-        const fireElement = document.getElementById("fire");
+    let fireIndex = 0;
+    const fireElement = document.getElementById("fire");
 
-        setInterval(() => {
-            fireIndex = (fireIndex + 1) % fireImages.length;
-            fireElement.src = fireImages[fireIndex] + "?t=" + new Date().getTime();
-        }, 100);
-    };
+    setInterval(() => {
+        fireIndex = (fireIndex + 1) % fireImages.length;
+        fireElement.src = fireImages[fireIndex];
+    }, 100);
 </script>
 </body>
 </html>
